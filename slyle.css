@@ -254,3 +254,15 @@ body{
 	align-items: center;
 	display: none;
 }
+
+.result_output_image_sec img {
+	width: 103px;
+	border: 4px solid #ddd;
+}
+
+.image_text {
+	font-size: 15px;
+	text-align: center;
+	border: 3px solid #ddd;
+	margin-top: 5px;
+}

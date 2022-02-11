@@ -195,19 +195,33 @@ function singleStudntResult(index){
     
 
     result_output_sec.innerHTML = `
+
             <h1 id="result_comm" class="text-center alert-primary p-2">Result Commient</h1>
             <h1 id="result_good" class="text-center alert-success p-2">Congratulations</h1>
             <h1 id="result_bad" class="text-center alert-danger p-2">try next time</h1>
-            <div class="stu_data_output">
-            <h1 class="out_name"><span>Name</span> : <samp id="out_name">${ storageData[index].name }</samp></h1>
-            <h1 class="out_roll"><span>Roll</span> : <samp id="out_roll">${ storageData[index].roll }</samp></h1>
-            <h1 class="out_reg"><span>Registion No</span> : <samp id="out_reg">${ storageData[index].regNum }</samp></h1>
-            <h1 class="out_group"><span>Group</span> : <samp id="out_group">${ storageData[index].group }</samp></h1>
-            <h1 class="out_year"><span>Passign Year</span> : <samp id="out_year">${ storageData[index].psYear }</samp></h1>
-            <h1 class="grade"><span>Grade</span> : <samp id="grade">
-            ${ result.finalCgpa( storageData[index].ban, storageData[index].eng, storageData[index].math, storageData[index].ssci, storageData[index].reg, storageData[index].gs1, storageData[index].gs2, storageData[index].gs3, storageData[index].gs4).finalgread}
-            </samp></h1>
+            <div class="row">
+            <div class="col-md-8">
+
+                <div class="stu_data_output">
+                <h1 class="out_name"><span>Name</span> : <samp id="out_name">${ storageData[index].name }</samp></h1>
+                <h1 class="out_roll"><span>Roll</span> : <samp id="out_roll">${ storageData[index].roll }</samp></h1>
+                <h1 class="out_reg"><span>Registion No</span> : <samp id="out_reg">${ storageData[index].regNum }</samp></h1>
+                <h1 class="out_group"><span>Group</span> : <samp id="out_group">${ storageData[index].group }</samp></h1>
+                <h1 class="out_year"><span>Passign Year</span> : <samp id="out_year">${ storageData[index].psYear }</samp></h1>
+                <h1 class="grade"><span>Grade</span> : <samp id="grade">
+                ${ result.finalCgpa( storageData[index].ban, storageData[index].eng, storageData[index].math, storageData[index].ssci, storageData[index].reg, storageData[index].gs1, storageData[index].gs2, storageData[index].gs3, storageData[index].gs4).finalgread}
+                </samp></h1>
+                </div>
+
             </div>
+            <div class="col-md-4 ">
+            <div class="result_output_image_sec d-flex justify-content-center align-items-center">
+            <img src="${ storageData[index].photo }" alt="">
+            </div>
+            <h2 class="image_text">Student Photo</h2>
+            </div>
+        </div>
+
             <div class="result_output">
             <table class="table">
                 <thead>
