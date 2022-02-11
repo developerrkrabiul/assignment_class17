@@ -1,0 +1,256 @@
+
+/* Difolt CSS Work */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #ddd;
+	font-family: roboto;
+}
+a,
+a:hover{
+	text-decoration: none;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+/* Work Start now */
+
+.my_taba_sec{
+    width: 600px;
+    margin: auto;
+    background: white;
+    margin-top: 20px;
+    padding: 10px;
+}
+.my_taba_sec ul {
+	display: flex;
+	justify-content: space-around;
+}
+.my_taba_sec ul li {
+	width: 20%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+}
+.my_taba_sec ul li a {
+	display: block;
+	color: #000;
+	border-bottom: 1px solid #ccc;
+}
+.my_taba_sec .tab_header .active {
+	border: 1px solid #ccc;
+	border-bottom: none;
+	border-radius: 5px 5px 0 0;
+	background: #dddddd1f;
+}
+/* tab_body css work */
+.my_taba_sec .tab_pane {
+	padding: 10px;
+	padding-bottom: 0;
+	display: none;
+}
+.my_taba_sec .tab_body .active {
+	display: block;
+}
+
+
+/* Theme Option CSS work */
+.theme_menu {
+	background: white;
+}
+
+.theme_menu li a {
+	padding: 5px 20px;
+	color: #000;
+	display: block;
+	border-bottom: 1px solid #ddd;
+}
+.theme_menu li a:hover {
+	background: #f4f1f1;
+}
+.theme_option_left_sec .tab_pane h2 {
+	padding: 5px 20px;
+	border-bottom: 1px solid #ddd;
+	font-size: 25px;
+	text-transform: capitalize;
+}
+.theme_option_left_sec .tab_pane p {
+	padding: 5px 20px;
+}
+.theme_option_left_sec .tab_pane {
+	display: none;
+}
+.theme_option_left_sec .tab_pane.active {
+	display: block;
+}
+.theme_menu li a.active {
+	background: #f4f1f1;
+}
+
+/* Student Section CSS work */
+
+.student_section {
+	background: white;
+}
+
+.student_section.form-label {
+	font-size: 15px;
+	font-family: roboto;
+}
+
+.stu_title {
+	font-size: 35px;
+}
+.stu_info {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.form-label{
+	margin: 0;
+}
+
+.stu_data_output h1 {
+	font-size: 20px;
+}
+.stu_data_output span {
+	width: 150px;
+	display: inline-block;
+}
+#result_comm {
+	font-family: roboto;
+	text-transform: uppercase;
+}
+.stu_data_output {
+	font-family: roboto;
+	text-transform: uppercase;
+}
+
+
+.result_output_sec {
+	background: white;
+	width: 600px;
+	height: fit-content;
+}
+/* table css work */
+
+.result_output table {
+	border: 1px solid #ddd;
+}
+.result_output table td {
+	border: 1px solid rgb(200, 220, 251);
+}
+
+.result_output table tbody tr:nth-child(odd){
+    background: rgb(200, 220, 251);
+}
+
+.result_output table thead {
+	background: #007814;
+	color: #fff;
+	font-size: 19px;
+	font-weight: 200 !important;
+	font-family: roboto;
+}
+
+.result_output table tbody {
+	font-size: 16px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+/* #hidden #humanities {
+	display: none;
+} */
+
+/* #humanities {
+	display: none !important;
+} */
+.group_sec {
+	display: none;
+}
+
+#sci_visible #scince_row{
+	display: block !important;
+}
+
+#humaniti_row{
+	display: none ;
+}
+#hum_visible #humaniti_row{
+	display: block !important;
+}
+#business_row {
+	display: none !important;
+}
+#bus_visible #business_row {
+	display: flex !important;
+}
+
+.final_result table thead {
+	background: #0b0b0b;
+	font-size: 15px;
+	font-weight: 200 !important;
+	font-family: roboto;
+}
+
+.final_result {
+	text-align: center;
+}
+
+#result_good {
+	display: none;
+}
+#result_bad {
+	display: none;
+}
+
+#redalart #result_bad {
+	display: block;
+	font-family: roboto;
+	text-transform: uppercase;
+}
+#redalart #grade {
+	font-family: roboto;
+	color: red;
+}
+#redalart .final_result table tr {
+	background: red !important;
+	color: #fff;
+}
+#redalart #result_comm{
+	display: none;
+}
+#godalart #result_comm{
+	display: none;
+}
+#godalart #result_good{
+	display: block;
+}
+
+
+/* extra css */
+.student_out_dashbord .table.table-striped {
+	font-size: 15px;
+}
+.student_out_dashbord .table.table-striped tr td {
+    line-height: 50px;
+}
+body{
+	position: relative;
+}
+.result_output_con {
+	background: #fff9;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+	display: none;
+}
