@@ -168,7 +168,8 @@ function studentoutport(){
             <td>A+</td>
             <td>5</td>
             <td><img class="" width="50px" src="${sdata.photo}" alt=""></td>
-            <td><button   class="btn btn-info btn-sm s_view">view</button> <button onclick="deletedata(${ index })" class="btn btn-danger btn-sm">Delete</button></td>
+            <td><button onclick="singleStudntResult(${ index })"  class="btn btn-info btn-sm s_view">view</button> 
+            <button onclick="deletedata(${ index })" class="btn btn-danger btn-sm">Delete</button></td>
         </tr>
 
     `
@@ -179,15 +180,17 @@ function studentoutport(){
 
 
 
-
+const result_output_con = document.querySelector('.result_output_con');
 
 const result_output_sec = document.querySelector('.result_output_sec');
 
 function singleStudntResult(index){
 
+    result_output_con.style.display = 'flex';
+
 
     let result = new FullResult();
-    let StorageData = dataGet('student_data');
+    let storageData = dataGet('student_data');
 
     
 
@@ -196,12 +199,14 @@ function singleStudntResult(index){
             <h1 id="result_good" class="text-center alert-success p-2">Congratulations</h1>
             <h1 id="result_bad" class="text-center alert-danger p-2">try next time</h1>
             <div class="stu_data_output">
-            <h1 class="out_name"><span>Name</span> : <samp id="out_name">${ StorageData[index].name }</samp></h1>
-            <h1 class="out_roll"><span>Roll</span> : <samp id="out_roll">${ StorageData[index].roll }</samp></h1>
-            <h1 class="out_reg"><span>Registion No</span> : <samp id="out_reg">${ StorageData[index].regNum }</samp></h1>
-            <h1 class="out_group"><span>Group</span> : <samp id="out_group">${ StorageData[index].group }</samp></h1>
-            <h1 class="out_year"><span>Passign Year</span> : <samp id="out_year">${ StorageData[index].psYear }</samp></h1>
-            <h1 class="grade"><span>Grade</span> : <samp id="grade">........</samp></h1>
+            <h1 class="out_name"><span>Name</span> : <samp id="out_name">${ storageData[index].name }</samp></h1>
+            <h1 class="out_roll"><span>Roll</span> : <samp id="out_roll">${ storageData[index].roll }</samp></h1>
+            <h1 class="out_reg"><span>Registion No</span> : <samp id="out_reg">${ storageData[index].regNum }</samp></h1>
+            <h1 class="out_group"><span>Group</span> : <samp id="out_group">${ storageData[index].group }</samp></h1>
+            <h1 class="out_year"><span>Passign Year</span> : <samp id="out_year">${ storageData[index].psYear }</samp></h1>
+            <h1 class="grade"><span>Grade</span> : <samp id="grade">
+            ${ result.finalCgpa( storageData[index].ban, storageData[index].eng, storageData[index].math, storageData[index].ssci, storageData[index].reg, storageData[index].gs1, storageData[index].gs2, storageData[index].gs3, storageData[index].gs4).finalgread}
+            </samp></h1>
             </div>
             <div class="result_output">
             <table class="table">
@@ -218,37 +223,37 @@ function singleStudntResult(index){
                 <tr id="ban">
                     <td>101</td>
                     <td>Bangla</td>
-                    <td>${StorageData[index].ban}</td>
-                    <td>${ result.result(StorageData[index].ban).gpacal }</td>
-                    <td>${ result.result(StorageData[index].ban).greadcal }</td>
+                    <td>${storageData[index].ban}</td>
+                    <td>${ result.result(storageData[index].ban).gpacal }</td>
+                    <td>${ result.result(storageData[index].ban).greadcal }</td>
                 </tr>
                 <tr id="eng">
                     <td>102</td>
                     <td>English</td>
-                    <td>${StorageData[index].eng}</td>
-                    <td>${ result.result(StorageData[index].eng).gpacal }</td>
-                    <td>${ result.result(StorageData[index].eng).greadcal }</td>
+                    <td>${storageData[index].eng}</td>
+                    <td>${ result.result(storageData[index].eng).gpacal }</td>
+                    <td>${ result.result(storageData[index].eng).greadcal }</td>
                 </tr>
                 <tr id="math">
                     <td>103</td>
                     <td>Math</td>
-                    <td>${StorageData[index].math}</td>
-                    <td>${ result.result(StorageData[index].math).gpacal }</td>
-                    <td>${ result.result(StorageData[index].math).greadcal }</td>
+                    <td>${storageData[index].math}</td>
+                    <td>${ result.result(storageData[index].math).gpacal }</td>
+                    <td>${ result.result(storageData[index].math).greadcal }</td>
                 </tr>
                 <tr id="s_sic">
                     <td>104</td>
                     <td>Social Sience</td>
-                    <td>${StorageData[index].ssci}</td>
-                    <td>${ result.result(StorageData[index].ssci).gpacal  }</td>
-                    <td>${ result.result(StorageData[index].ssci).greadcal  }</td>
+                    <td>${storageData[index].ssci}</td>
+                    <td>${ result.result(storageData[index].ssci).gpacal  }</td>
+                    <td>${ result.result(storageData[index].ssci).greadcal  }</td>
                 </tr>
                 <tr id="reli">
                     <td>105</td>
                     <td>Religion</td>
-                    <td>${StorageData[index].reg}</td>
-                    <td>${ result.result(StorageData[index].reg).gpacal }</td>
-                    <td>${ result.result(StorageData[index].reg).greadcal }</td>
+                    <td>${storageData[index].reg}</td>
+                    <td>${ result.result(storageData[index].reg).gpacal }</td>
+                    <td>${ result.result(storageData[index].reg).greadcal }</td>
                 </tr>
                 </tbody>
             </table>
@@ -272,31 +277,31 @@ function singleStudntResult(index){
                             <tbody>
                             <tr id="physi">
                                 <td>136</td>
-                                <td>${StorageData[index].sub1}</td>
-                                <td>${StorageData[index].gs1}</td>
-                                <td>${ result.result(StorageData[index].gs1).gpacal }</td>
-                                <td>${ result.result(StorageData[index].gs1).greadcal }</td>
+                                <td>${storageData[index].sub1}</td>
+                                <td>${storageData[index].gs1}</td>
+                                <td>${ result.result(storageData[index].gs1).gpacal }</td>
+                                <td>${ result.result(storageData[index].gs1).greadcal }</td>
                             </tr>
                             <tr id="biol">
                                 <td>138</td>
-                                <td>${StorageData[index].sub2}</td>
-                                <td>${StorageData[index].gs2}</td>
-                                <td>${ result.result(StorageData[index].gs2).gpacal }</td>
-                                <td>${ result.result(StorageData[index].gs2).greadcal }</td>
+                                <td>${storageData[index].sub2}</td>
+                                <td>${storageData[index].gs2}</td>
+                                <td>${ result.result(storageData[index].gs2).gpacal }</td>
+                                <td>${ result.result(storageData[index].gs2).greadcal }</td>
                             </tr>
                             <tr id="chemi">
                                 <td>137</td>
-                                <td>${StorageData[index].sub3}</td>
-                                <td>${StorageData[index].gs3}</td>
-                                <td>${ result.result(StorageData[index].gs3).gpacal }</td>
-                                <td>${ result.result(StorageData[index].gs3).greadcal }</td>
+                                <td>${storageData[index].sub3}</td>
+                                <td>${storageData[index].gs3}</td>
+                                <td>${ result.result(storageData[index].gs3).gpacal }</td>
+                                <td>${ result.result(storageData[index].gs3).greadcal }</td>
                             </tr>
                             <tr id="hig_math">
                                 <td>126</td>
-                                <td>${StorageData[index].sub4}</td>
-                                <td>${StorageData[index].gs4}</td>
-                                <td>${ result.result(StorageData[index].gs4).gpacal }</td>
-                                <td>${ result.result(StorageData[index].gs4).greadcal }</td>
+                                <td>${storageData[index].sub4}</td>
+                                <td>${storageData[index].gs4}</td>
+                                <td>${ result.result(storageData[index].gs4).gpacal }</td>
+                                <td>${ result.result(storageData[index].gs4).greadcal }</td>
                             </tr>
                         </tbody>
                         </table>
@@ -321,9 +326,9 @@ function singleStudntResult(index){
                 <tr>
                     <th scope="row">  </th>
                     <td id="total_mark">800</td>
-                    <td>${ result.finalCgpa( StorageData[index].ban, StorageData[index].eng, StorageData[index].math, StorageData[index].ssci, StorageData[index].reg, StorageData[index].gs1, StorageData[index].gs2, StorageData[index].gs3, StorageData[index].gs4).rescgpa}</td>
+                    <td>${ result.finalCgpa( storageData[index].ban, storageData[index].eng, storageData[index].math, storageData[index].ssci, storageData[index].reg, storageData[index].gs1, storageData[index].gs2, storageData[index].gs3, storageData[index].gs4).rescgpa}</td>
 
-                    <td id="total_grade">${ result.finalCgpa( StorageData[index].ban, StorageData[index].eng, StorageData[index].math, StorageData[index].ssci, StorageData[index].reg, StorageData[index].gs1, StorageData[index].gs2, StorageData[index].gs3, StorageData[index].gs4).finalgread}</td>
+                    <td id="total_grade">${ result.finalCgpa( storageData[index].ban, storageData[index].eng, storageData[index].math, storageData[index].ssci, storageData[index].reg, storageData[index].gs1, storageData[index].gs2, storageData[index].gs3, storageData[index].gs4).finalgread}</td>
                 </tr>
                 </tbody>
             </table>
@@ -332,20 +337,10 @@ function singleStudntResult(index){
             </div>
     `
 
-    
+};
 
 
-} 
 
-const s_view = document.querySelector('.s_view');
-
-s_view.addEventListener("click", ()=>{
-    result_output_con.style.display = 'flex';
-    singleStudntResult(2);
-
-});
-
-const result_output_con = document.querySelector('.result_output_con');
 
 result_output_con.addEventListener('click', function(e){
 
